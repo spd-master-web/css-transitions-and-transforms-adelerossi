@@ -1,1 +1,74 @@
 /* box */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gray: #E0E3E5;
+  --green: #8DF2C2;
+  --black:  #000;
+}
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+
+  /* center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background-color: var(--gray) ;
+}
+
+.box {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.letter {
+  z-index: 9;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  color: #fff;
+
+  
+}
+
+.box-1 {
+
+  transform: scale(0,0);
+  background-color: black;
+  transition: transform 1s ease 1s;
+  transform-origin: bottom right; /* perché parte dal basso e destra */
+  z-index: 6;
+}
+
+.box-2 {
+  transform: scaleX(0);
+  background-color: green;
+  transition: transform 1s ease;
+  transform-origin: left; /* perché parte da sinistra */
+  z-index: 3;
+}
+
+.container:hover .box-1 {
+  transform: scale(1,1);
+}
+
+.container:hover .box-2 {
+  transform: scaleX(1);
+}
